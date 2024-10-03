@@ -121,3 +121,11 @@ table tr td{
     background-color: blue;
     color: white;
 }
+
+/*CSS cho login*/
+.login{
+    border: 1px solid gray;
+    width: 20%;
+    margin: 5% auto;
+    padding: 2%;
+}
