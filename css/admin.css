@@ -76,6 +76,13 @@ table tr td{
 .btn-danger:hover{
     background-color:pink;
 }
+
+.success{
+    color: green;
+}
+.error{
+    color: orangered;
+}
 /*Css cho menu*/
 .menu{
   border-bottom: 1px solid black;

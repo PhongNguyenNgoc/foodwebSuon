@@ -16,7 +16,26 @@
             echo $_SESSION['add']; //Hien thong bao session
             unset($_SESSION['add']); //Huy thong bao session
         }
-
+        if (isset($_SESSION['delete'])) {
+            echo $_SESSION['delete']; //Hien thong bao session
+            unset($_SESSION['delete']); //Huy thong bao session
+        }
+        if (isset($_SESSION['update'])) {
+            echo $_SESSION['update']; //Hien thong bao session
+            unset($_SESSION['update']); //Huy thong bao session
+        }
+        if (isset($_SESSION['user-not-found'])) {
+            echo $_SESSION['user-not-found']; //Hien thong bao session
+            unset($_SESSION['user-not-found']); //Huy thong bao session
+        }
+        if (isset($_SESSION['pwd-not-match'])) {
+            echo $_SESSION['pwd-not-match']; //Hien thong bao session
+            unset($_SESSION['pwd-not-match']); //Huy thong bao session
+        }
+        if (isset($_SESSION['change-pwd'])) {
+            echo $_SESSION['change-pwd']; //Hien thong bao session
+            unset($_SESSION['change-pwd']); //Huy thong bao session
+        }
         ?>
         <br>
         <table class="tbl-full">
@@ -56,8 +75,9 @@
                             <td><?php echo $full_name; ?></td>
                             <td><?php echo $username; ?></td>
                             <td>
-                                <a href="#" class="btn-secondary">Update Admin</a>
-                                <a href="#" class="btn-danger">Delete Admin</a>
+                                <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
+                                <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-secondary">Change Password</a>
+                                <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
                             </td>
                         </tr>
             <?php
