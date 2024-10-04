@@ -1,5 +1,7 @@
 <?php include('partials/menu.php'); ?>
 
+
+
 <div class="main-content">
     <div class="wrapper">
         <h1>Manage Category</h1>
@@ -8,6 +10,30 @@
         if (isset($_SESSION['add'])) {
             echo $_SESSION['add']; //Hien thong bao session
             unset($_SESSION['add']); //Huy thong bao session
+        }
+        if (isset($_SESSION['remove'])) {
+            echo $_SESSION['remove']; //Hien thong bao session
+            unset($_SESSION['remove']); //Huy thong bao session
+        }
+        if (isset($_SESSION['delete'])) {
+            echo $_SESSION['delete']; //Hien thong bao session
+            unset($_SESSION['delete']); //Huy thong bao session
+        }
+        if (isset($_SESSION['no-category-found'])) {
+            echo $_SESSION['no-category-found']; //Hien thong bao session
+            unset($_SESSION['no-category-found']); //Huy thong bao session
+        }
+        if (isset($_SESSION['update'])) {
+            echo $_SESSION['update']; //Hien thong bao session
+            unset($_SESSION['update']); //Huy thong bao session
+        }
+        if (isset($_SESSION['upload'])) {
+            echo $_SESSION['upload']; //Hien thong bao session
+            unset($_SESSION['upload']); //Huy thong bao session
+        }
+        if (isset($_SESSION['fail-to remove'])) {
+            echo $_SESSION['fail-to remove']; //Hien thong bao session
+            unset($_SESSION['fail-to remove']); //Huy thong bao session
         }
         ?>
         <br>
@@ -65,8 +91,8 @@
                         <td><?php echo $featured; ?></td>
                         <td><?php echo $active; ?></td>
                         <td>
-                            <a href="#" class="btn-secondary">Update Category</a>
-                            <a href="#" class="btn-danger">Delete Category</a>
+                            <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-secondary">Update Category</a>
+                            <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Category</a>
                         </td>
 
                     </tr>

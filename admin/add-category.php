@@ -81,23 +81,26 @@
                 //upload anh
                 //de upload anh, can:ten anh, duong dan nguon anh, duong dan dich
                 $image_name = $_FILES['image']['name'];
+                //Them category nhung khong can upload anh
+                if ($image_name != "") {
 
-                $ext = end(explode('.', $image_name)); //Lay duoi anh (.jpg,.png...)
+                    $ext = end(explode('.', $image_name)); //Lay duoi anh (.jpg,.png...)
 
-                $image_name = "FC_" . rand(0, 999) . '.' . $ext; //doi ten khi upload lap lai hinh anh
+                    $image_name = "FC_" . rand(0, 999) . '.' . $ext; //doi ten khi upload lap lai hinh anh
 
-                $source_path = $_FILES['image']['tmp_name'];
-                $destination_path = "../images/category/" . $image_name;
+                    $source_path = $_FILES['image']['tmp_name'];
+                    $destination_path = "../images/category/" . $image_name;
 
-                //upload anh
-                $upload = move_uploaded_file($source_path, $destination_path);
+                    //upload anh
+                    $upload = move_uploaded_file($source_path, $destination_path);
 
-                //Kiem tra anh da duoc upload chua?
-                //Va neu anh da chua duoc upload, se dung chuong trinh va chuyen huong + bao loi
-                if ($upload == false) {
-                    $_SESSION['upload'] = "<div class='error'>Upload anh that bai<div>";
-                    header("location:" . SITEURL . 'admin/add-category.php');
-                    die(); //buoc dung
+                    //Kiem tra anh da duoc upload chua?
+                    //Va neu anh da chua duoc upload, se dung chuong trinh va chuyen huong + bao loi
+                    if ($upload == false) {
+                        $_SESSION['upload'] = "<div class='error'>Upload anh that bai<div>";
+                        header("location:" . SITEURL . 'admin/add-category.php');
+                        die(); //buoc dung
+                    }
                 }
             } else {
                 //ko up anh va set gia tri trong
