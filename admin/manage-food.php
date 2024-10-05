@@ -8,7 +8,28 @@
         if (isset($_SESSION['add'])) {
             echo $_SESSION['add']; //Hien thong bao session
             unset($_SESSION['add']); //Huy thong bao session
-        } ?>
+        }
+        if (isset($_SESSION['remove'])) {
+            echo $_SESSION['remove']; //Hien thong bao session
+            unset($_SESSION['remove']); //Huy thong bao session
+        }
+        if (isset($_SESSION['delete'])) {
+            echo $_SESSION['delete']; //Hien thong bao session
+            unset($_SESSION['delete']); //Huy thong bao session
+        }
+        if (isset($_SESSION['unAuth'])) {
+            echo $_SESSION['unAuth']; //Hien thong bao session
+            unset($_SESSION['unAuth']); //Huy thong bao session
+        }
+        if (isset($_SESSION['update'])) {
+            echo $_SESSION['update']; //Hien thong bao session
+            unset($_SESSION['update']); //Huy thong bao session
+        }
+        if (isset($_SESSION['fail-to remove'])) {
+            echo $_SESSION['fail-to remove']; //Hien thong bao session
+            unset($_SESSION['fail-to remove']); //Huy thong bao session
+        }
+        ?>
         <br>
         <!--Nut them admin-->
         <a href="<?php echo SITEURL; ?>admin/add-food.php" class="btn-primary">Add Food</a>
@@ -65,8 +86,8 @@
                         <td><?php echo $featured; ?></td>
                         <td><?php echo $active; ?></td>
                         <td>
-                            <a href="#" class="btn-secondary">Update Food</a>
-                            <a href="#" class="btn-danger">Delete Food</a>
+                            <a href="<?php echo SITEURL; ?>admin/update-food.php?id=<?php echo $id; ?>" class="btn-secondary">Update Food</a>
+                            <a href="<?php echo SITEURL; ?>admin/delete-food.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Food</a>
                         </td>
                     </tr>
             <?php
