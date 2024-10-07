@@ -199,7 +199,9 @@ fieldset{
     margin-bottom: 1%; 
     font-weight: bold;
 }
-
+.error{
+    color: red;
+}
 
 
 /* CSS for Mobile Size or Smaller Screen */

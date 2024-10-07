@@ -182,11 +182,11 @@ if (isset($_GET['id'])) {
                     //Kiem tra anh da xoa? Neu that bai , dung toan bo tien trinh
 
                 } else {
-                    $image_name = $current_image;
+                    $image_name = $current_image; // Khi anh ko dc chon
                 }
             } else {
-                //ko up anh va set gia tri trong
-                $image_name = $current_image;
+
+                $image_name = $current_image; //Khi chua chon anh
             }
             //Tao truy van sql de insert
             $sql3 = "UPDATE tbl_food SET 
