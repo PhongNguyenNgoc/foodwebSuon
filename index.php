@@ -17,6 +17,13 @@
 <section class="categories">
     <div class="container">
         <h2 class="text-center">Explore Foods</h2>
+
+        <?php
+        if (isset($_SESSION['order'])) {
+            echo $_SESSION['order'];
+            unset($_SESSION['order']);
+        }
+        ?>
         <!--Lay du lieu tu may chu-->
         <?php
         //Tao truy van sql de lay category tu db
@@ -101,7 +108,7 @@
                         </p>
                         <br>
 
-                        <a href="order.html" class="btn btn-primary">Order Now</a>
+                        <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
                     </div>
                 </div>
         <?php
